@@ -1,0 +1,48 @@
+{% extends 'app1/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+  <h2>Register</h2>
+  <form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    <table>
+<tr>
+    <td><label for="username">Username</label></td>
+    <td><input type="text" name="username" placeholder="Enter Username"></td>
+</tr>
+<tr>
+    <td><label for="email">Email</label></td>
+    <td><input type="email" name="email" placeholder="Enter Email"></td>
+</tr>
+<tr>
+    <td><label for="password">Password</label></td>
+    <td><input type="password" name="password" placeholder="Enter Password"></td>
+</tr> 
+
+<tr>
+    <td>
+        <!-- <h7>Category</h7> -->
+        Category
+    </td>
+    <td>
+    <select name="Category" value="Employee">
+        <option value="Head">Head</option>
+        <option value="Employee" selected >Employee</option>
+    </select>
+    </td>
+</tr>
+
+<!-- <tr>
+    <td><label for="username">Username</label></td>
+    <td><input type="text" name="username" placeholder="Enter Username"></td>
+</tr>
+<tr>
+    <td><label for="username">Username</label></td>
+    <td><input type="text" name="username" placeholder="Enter Username"></td>
+</tr> -->
+</table>
+    <button type="submit">Register</button>
+  </form>
+</div>
+{% endblock %}
