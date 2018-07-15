@@ -28,4 +28,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page': 'index'}, name='logout'),
     path('register/head/',views.register,name='register'),
     path('register/employee/',views.empreg,name='empreg'),
+    url( r'^account/(?P<pk>\d+)/$', views.dashboard,name="dashboard"),
+
 ]
